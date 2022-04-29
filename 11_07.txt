@@ -1,0 +1,9 @@
+Adobe Photostop inherits from Image Editor, and overrided Draw(),
+Adope Photostop has shapes[] inherited from ImageEditor.
+
+an Image editor can have from 0 - inifinty shaapes in it. also it's a composition relationship (has-a).
+
+Rectangle & Circle inherit from Shape, both have common data member Color,
+yet both overridded ComputeArea() & Draw(), also they added data members of their own.
+
+No particular thoughts about implementation, other than shouldn't Image editor have has-a to Rectangle and Circle too?

@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "new": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "code to run": "cpp",
+        "sstream": "cpp",
+        "iostream": "cpp"
+    },
+    // "code-runner.executorMap": {
+    //     "cpp": "cd $dir ; if ($?) { g++ $fileName HelperFunctions.cpp date_class.cpp Book_class.cpp Session_class.cpp SessionManager_class.cpp BookManager_class.cpp CustomerUser_class.cpp AdminUser_class.cpp UserManager_class.cpp eBookSystemIO_class.cpp -o 0_eBookSystem } ; if ($?) { .\\$fileNameWithoutExt.exe }"
+    // }
+}

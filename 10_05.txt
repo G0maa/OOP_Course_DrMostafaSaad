@@ -1,0 +1,6 @@
+I guess we will make it with multiple inheritance?
+    A problem we may face (which is not present here),
+    is "crossing" تقاطع of functions,
+    and/or need of redefinition of certain ones => make_sound() for instansce.
+
+(Looks like I missed the questions entierly it was "has-a" not "is-a" relationship that is asked for.)

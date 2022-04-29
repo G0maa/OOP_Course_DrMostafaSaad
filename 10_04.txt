@@ -1,0 +1,11 @@
+Considering the question, it implies that every Mammal gives milk
+(and some other functions),
+
+I think Penguins don't give milk? Nevermind not even a mammal.
+Googled => "the duck-billed platypus and the echidna." 
+don't give "Live birth", they lay eggs instead O_O.
+
+Lesson:
+    Somekind of abstractions (Considering inheritance is some form of it),
+    might be correct currently,
+    but turn out to be wrong later, or more like "needed to change" later.

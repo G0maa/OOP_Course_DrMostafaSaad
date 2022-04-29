@@ -1,0 +1,8 @@
+I guess same as in previous one, 
+we will have repeated functions in Copier class from Printer and Scanner,
+because both of them inherit from PoweredDevice,
+not sure if that's really the  problem.
+
+it should be:
+    PoweredDevice => Printer, Scanner, Copier.
+    All-in-one => Printer, Scanner, Copier.

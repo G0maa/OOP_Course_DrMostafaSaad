@@ -1,0 +1,16 @@
+Current issue is for each new service, M banks will essentially 
+write the same piece of software,
+similarly, for each new bank, it will implement software similar (If not identical)
+to the one in the other banks.
+(N * M).
+
+I guess the start up (much more like government tbh), will think of an idea
+to elminiate this amount of repating software development, which means 
+it will work as a middle man, and it will develop the software only once.
+(Wonder if they already exist.)
+
+I speak no business :D, read the articles though.
+I tried to sell some stuff before, I understood that careful planning is very important,
+and Quality of the product isn't going to sell, at least by itself.
+
+Most of startups fail as far as I know.

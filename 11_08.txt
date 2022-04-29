@@ -1,0 +1,25 @@
+Software Design -> Software Architecture -> System Design
+==
+I studied Computer Architecture & Organization, so this to me seems like 
+some scinario of Interrupts, Game is already busy doing some other stuff,
+if it periodically goes to each mobile and give it it's message, it might be a waste of resource.
+
+Or is it?
+
+Generally sending would mean we alert the system that we have a message,
+so if we work in sending by alert, we should use the same way in recieve,
+aka alerting the system that we are ready to recieve messages.
+
+I prefer the first one, but the second one doesn't seem too far fetched either,
+as the system will always have some buffer for sent messages, so it will need to "attend" them
+some time, adding more time to send them to their respective recepits wouldn't make a big difference I think.
+
+
+Sending (alert the system you have a message), when system is free system picks up your message,
+receiving, alert the system if there are messages, when system is free, system sends your message.
+
+Sending (send whole object of message to system), system has to deal with it I guess,
+receiving (ask system for object of message)
+
+tl;dr
+Way I see it you have two options, both them iunclude alerting the system anyway.

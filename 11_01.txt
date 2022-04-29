@@ -1,0 +1,52 @@
+A1:
+    Because Parent class has not been initialized yet, so you can't initalize a member of it.
+    Remember, initalizer list is called even before the constructor.
+
+    After reading Doc answer, tl;dr is:
+        The only way to inialize base-class data members from drived-class constructor is
+        by calling base class constructor, or change them inside { } the constructor it self,
+        obviously this doesn't apply for const in base-class.
+
+A2:
+    Heh, "Friendship is not inherited" :)
+    Friend class is programmed to my class private members only,
+    so extending that wouldn't make sense, as it means that I should have
+    more functions in friend class to use the new extneded functions, that's all
+    apart from voiolating data-hiding of course :)
+
+    After reading doc answer: You put your friend in your will, his 'sons' will not inherit that :)
+                               regardless of the technical talk.
+                               See the code in link.
+
+A3:
+    ~~Shouldn't they be equal?~~
+    Subclasses would have more objects than base class.
+    (I thought he meant all of objects of every sub class vs base class).
+
+    After reading doc answer:
+        Generalization vs Specialization, _obviously_ Generalization has more objects...
+
+A4:
+    Wait, weren't they always NOT inherited?
+    Thinking over this again, we for sure have functions that do change those private variables... 
+    those functions are inherited...
+    Nah, I don't think they're inherited. Although that may lead to _many_ problmes,
+    aka if someone calls a public setter for a private data member.
+
+    After reading doc answer:
+        Everything is inherited, private means that you just don't have access to it.
+
+A5:
+    I am not sure I understand the question quite well.
+    I was told that getters/setters are EVIL(TM), so I'd go with not having them.
+    It would mean that I can change what's private for outsiders so no.
+    - If it's Protected with protected setters & getters then no,
+      if it's protected ONLY then yes, subclass might set data of protected that could
+      corrupt it.
+    - Child is dependent on parent for that 
+      protected variables along any functions needed with it.
+
+    After reading doc answer:
+        Long one, read it directly.
+
+

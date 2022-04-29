@@ -1,0 +1,7 @@
+Inheritance is "is-a" relationship, the code says:
+    a Car is-a Engine & Wheel, which is logically wrong,
+    the is-a word is basically set to say in heritance should only be used
+    (if used at all) when it's a relationship is of the genre of a parent and child.
+
+This means that you should use a Composition instead, 
+which defines this kidn of relationship well.

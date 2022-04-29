@@ -1,0 +1,10 @@
+Problem is Multiple inheritance, dont use it :D
+
+data member px and function pf is repeated in both A and B,
+so we don't know which is in Class C.
+
+I think solution is to specify using ::
+A::pf().
+
+I don't know if keyword `virtual` is related or not, I remember it being used
+in Diamond problem.

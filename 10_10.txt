@@ -1,0 +1,13 @@
+(name) is because I'm just too lazy to write all of it, 
+
+it's just multiple inheritance, lots of it + lots of classes :)
+
+BUT the code of logger is written only once tho! (I think).
+
+After I saw the solution, it's not a big difference so I built up on mine.
+
+I guess the concern is too many classes, too big hierarchy => Too complex.
+
+I didn't draw remaining arrows because it would look messy.
+
+Notice in the first time we added 4, next time we added more 8 classe... so 2^n?

@@ -1,0 +1,30 @@
+I/O hardware (with their classes): 
+    - Keypad
+    - CashDispenser
+    - Screen
+    - DepositSlot
+Only one of each.
+
+Firstly, `ATM` has to authenticate user against `BankDatabase`,
+    `BankDatabase` contains account of (may be) said user.
+
+`ATM` is connected with a only one `BacnkDatabase`, which contains many `Accounts`.
+
+After authentication of said user,
+ATM will allow user to varity of functions through `Transaction`, 
+User can have unlimited transaction functions.
+
+`Transaction` can have unlimited accesses to Bankdatabase,
+each of which has a different kind of transaction function.
+
+but for user to interact with `Transaction` he/she has to use I/O hardware.
+
+When the user interacts with said hardware, each of which has his own class I suppose,
+he will be able to use `Transaction` class functions which are:
+    - Withdrawal
+    - Deposit
+    - Balance inequiry
+
+BTW these functions are drived classes from transaction.
+Each of the drived classes will deal in it's way with the I/O hardware,
+aka each has their overridded functions that deals with I/O hardware.

@@ -1,0 +1,11 @@
+Question ID | Asker ID | Asked ID | Question | Answer | AQ | NextQuestion
+3	0	3	Test delete this.		1	-1
+7	0	1	First Thread1 Question?	Test answer	0	9
+8	2	3	This is thread2 first Question?		1	10
+9	4	1	DELETED QUESTION	DELETED ANSWER	0	-10
+10	4	3	This is Thread2 SecondQuestion?		1	18
+11	0	3	This is Thread3 FirstQuyestion?		0	13
+13	0	3	This is thread3 Second Question?		0	-10
+18	1	3	Test333		0	-10
+22	0	4	DELETED QUESTION	DELETED ANSWER	1	23
+23	0	4	Testing again again again	testt	0	-10

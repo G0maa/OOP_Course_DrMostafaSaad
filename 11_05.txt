@@ -1,0 +1,31 @@
+What is happening here? I am confused.
+
+although hello() accepts a pointer of class A only,
+it accepted pointer of class C.
+
+also pointer of A accepted new of C.
+
+About the output, I'd say pointers always print their functions so:
+    hello will change the inherited x in A.
+    and will print "I am A".
+
+    then again,
+    change inherited x in A
+    then print "I am A"
+
+    I am C
+    I am A
+
+    deletion is as always inreverse, I think type of pointer wouldn't matter?
+    (After seeing solution, it actually does... forgot to reverse those here too.)
+    A Destrucotr
+    B Destructor
+    C Destructor
+    A Destrucotr
+    B Destructor
+    C Destructor
+    
+
+
+all data members are visible, they're all in public.
+but for hello() only x is visible.

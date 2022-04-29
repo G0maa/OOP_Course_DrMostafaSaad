@@ -1,0 +1,12 @@
+The thought process is every square is a rectangle => is-a relationship.
+
+I don't see why is it incorrect, considering that he did his functions right,
+used `virtual`, `override` and wahtnot.
+the only way to use class Rectangle is either inherit or compose.
+
+If it's every square isn't a rectnagle, as I assumed, then all of this will be wrong,
+and more importantly we can't use Rectangle class anymore.
+
+at which point, I'll consider that the latter is true,
+I guess we will make a general class Shape, Rectangle will inherit from it,
+and Square will inherit from Shape... aka one more generalizaiton.

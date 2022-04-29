@@ -1,0 +1,104 @@
+Time: (Add 2 hour for various other stuff)
+    - OOA (0 min):
+        - Provided by Dr.
+        - Meaning requirements.
+    - OOD (4 hour 20 min): 
+        - Lots of thinking back and forth.
+        - Drawing UML.
+    - OOP (29 hour - 25 min):
+        - I started by going bottom-up approach, but aftere 1 Hour 30 Min I switched to
+          top-down approach, the first is hard.
+
+        - Five minutes I understood that the best idea is just to layout all classes & methods & data members.
+
+        - During the programming I faced problems of "Is this really the responsability for that class?" a lot,
+          also moving data between classes (when needed) stood to be a big problem, as I focused on only one design =>
+          one Run() function that has everything in it FOR that class,
+          aka it may need data from some other class before or after it.
+
+        - At the 4 Hour 45 Minutes I tried compiling the program for the first time, showed lots of errors,
+          mainly due to "Invalid use of incomplete type" 5 Minute search told me I should do it the C++ way,
+          and make header files and what not so here I am.
+        
+        - I split them to files, which took quite a lot of time, I should have used some bot that exists
+          somewhere to do the job for me, neveermind, I faced another problem, which is "Undefined refrence",
+          I was stuck at it for a VERY VERY long time, I also failed to notice what is a compilation error
+          and what is a linker error, anyway... I split them to files in hopes I'd solve the order of classes problem
+          (something gets called before something), lastly to realize having bunch of "include "x.cpp"" doesn't help really,
+          anyway, the problem I really had was that there's a deadlock between the eBookSystemIO class and Book class.
+          this was at 8 Hour 50 Min, so 4 Hours of nothing.. great.
+
+        - I don't know how to solve the deadlock, I think it can't be solved, I am thinking of an alternative.
+        
+        - I took a day off (visitors to my house).
+
+        - I asked on discord a bit, it gave me insight that my function design itself is wrong, very wrong infact.
+          I can't really point out where the mistkae happened it was more of a snowball effect,
+          My tl;dr on what not to do:
+
+            #HERE
+            + Layout all classes & functions in files or single file after designing the UML.
+            + Every now and then compile the file, maybe every 5 minutes or after finishing each section.
+            + I'd say code from top to bottom, but that's after the first +.
+            + Isolate the bugs you face, don't jump to searching for them on google.
+            + Use automated scripts if you can in any of those steps.
+            + The main bug I had can be found in bug.cpp
+
+        - Both solutions had their problems, I decided to ditch the `eBookSystemIO` class entierly.
+
+        - I am finally back on track after: 7 hours.
+
+        - Since I got out of that hole it has been steady process I guess,
+          some design violations here and there though.
+        
+        - I realized that HelperFunctions.cpp can be more efficient using Templates.
+
+        - After some time coding and few bugs here and there the Project is nearly finished BUT:
+          `SessionManager` showed a problem, I need to show sessions for particular `CustomerUser` Only,
+          also need to limit choose to sessions of that `CustomerUser`.
+
+        - I changed the data structure (In `SessionManager`) from vector to map,
+          now there are other bugs. Mainly, SaveSessions() doesn't work,
+          NewSession() breaks after the second time somehow!
+
+        - After some thought, I think UserManager having SessionManager might have been a better idea,
+          or more like, there's class Manager(s) which we generally have one instance of it.
+          The way I designed it, I made each CustoemrUser his own UserManager, which might have not been
+          a good idea.... When am I going to get better at this?!
+
+
+        - Project is finally finished.
+
+        - TO-DO - Extras :) -:
+            + Organize files.
+            + Add ability of adding range to PrintLine().
+            + Make blackbox test.
+
+    - OO-Revision (~2 hour - 30 min):
+        - Nothing much other than reading solution, and re-reading code generally.
+
+After seeing solution:
+
+    - See #HERE
+
+    - I totally missed adding something like `vector<string> pages`,
+      which is kind of funny, because that's all what's the proejct about :D
+
+    - This way of Model/View, I think it's already outdated after the secodn half of the course,
+      so I am not sure if I'd do it in the final project.
+    
+    - Solution used same class for Admin and Customer, I may cut corners on somethings (getters/setters :D),
+      I'd never put those two in the same pool.
+
+    - I think my solution is more cmoplex for no particular reason.
+
+    - I am unable to pinpoint a particular mistake I made, it's not that my solution is good.
+      more like I am too incomptent to notice mentioned mistakes, obviously better than AskMeOOP Project,
+      but aside from obviously mistakes I made in AskMeOOP, I can't find anything in particular here, 
+      except that it's a different deisgn of course.
+      => Can't say in virtual certanity "Here I made a mistkae, I shouldn't do it again.", like last project.
+
+    - I noticed a small thing while trying to design ExpediaProject,
+      My desings are very... "linear",
+      unlike Doctor's solutions, he uses `UserManager` to let's say sign in, then comes back to `ProjectSystem`,
+      in my projects I use `UserManager` to access other functionalities & classes. Hmmmm.

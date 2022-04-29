@@ -1,0 +1,80 @@
+Objects:
+    1- user
+        - Login/Register 
+        - List system users.
+
+    2- Questions
+        - Feed.
+        - Any task related to quetions (1-5).
+
+    3- Searcher
+        - Search for quetion-related tasks asked from 'Questions'.
+        - Make sure insert and deletion is sorted -> (To use BinarySearch)    
+
+After too much consideration and refining of said idea I came with the conclusion:
+    - Either I create object user at the start of main, and then somehow deal 
+      with rest of the problems.
+    - Or I make another class called maybe manager that manages object user and rest of objects.
+
+I went with the first one because I think creating another class just to sloely manage objects
+is just like making main() control other functions.
+
+Misc:
+        - Should I move couts to the interface (user)?
+        - I should make two separate fucntions, one acts as an interface and takes input and deals with wrong input
+          (aka validates the input to some extinct) and the other does the logic itself of said function.
+
+What's left:
+        - I'm too tired, it is done and fully functioning, 
+          there are few bugs here and there especially in input validation.
+
+Known Bugs:
+        - user test1 test1 when I press 2 2 in for the first commands breaks.
+                SOLVED:
+                        REASON: idx in function GetAnswers() gets out of range of vector<questions>.
+
+        - Refactored answers.txt & associated functions.
+                SOLVED: YES.
+                        REASON: Simplifiyng code & getting rid of useless functions...
+        
+Feature adding:
+        Thread Handling:
+                SOLVED: YES.
+                
+Q: #Question 1
+    What is more efficient?
+        - I'm trying to query something in a file, let's say I am trying to match all user id (column in file)
+            with given user id in function.
+        - I'm also trying to match with other columns.
+        Question is: Is it better to create copy-paste fucnctions for each query, or make one general function
+        with many if coniditons? (example if I want to mathc for the first column then it's the first if that does that job,
+        if I want to match with the second column it is the second if that does that job.)
+
+MISC:
+    On the constructor of user:
+        // I think this constructor should not exist in real-world scinario,
+        // Imagine if this is a website, once you open it, you will be asked to login/register, if not
+        // the site will clsoe itself, but if there exists no constructor, you can surf what's allowed of the site,
+        // until you press some button or do some action that needs you to be logged in.
+
+
+AFTERMATH:
+    Mistakes:              
+        - Didn't create AskMeSystem, instead used int main()
+            and Class User instead.
+        
+        - Didn't create 'Managers' classes.
+
+        - Used Struct.
+
+        - Should have used Class for Question (each), and for User,
+            and filled them with related functioons to (each) question/user.
+
+        - No use of helper functions (non-related to class functions).
+
+        - Dealing with files directly, Dr code loaded from
+        files to memory in each operation, what I did was loading from files
+        whenever I needed in each individual function.
+        Which again is a repition of reading files logic 
+        and MUCH slower (dealing with files instead of dealing with memory).
+        ** USE THE MEMORY FOR LOAD_FUNCTIONS() **

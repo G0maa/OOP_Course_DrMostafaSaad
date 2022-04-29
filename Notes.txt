@@ -1,0 +1,236 @@
+“Don’t ask for the information you need to do the work; ask the object that has the information to do the work for you.” -  Allen Holub
+01-04:
+	I think I am not getting the definitions well, like I can experss it
+	but maybe not as correct, also coding/homework wise, there are few things
+	which I skipped in the solution itself but generally I think I got at least
+	maybe 70% of the whole idea... hopefully... hopefully.. practice makes perfect
+	or reading in that matter. : )
+
+02:
+	- In Homework #02-02, Notice how we separated Date & Time then conslidated them again
+	in one class, my first thought is to use them indpendently.
+
+	- In Homework #02-03 Noticing composition and responsability when desiging.
+
+04:
+	- Definition of "User" as it's used a lot inside the course:
+		"I made a class, gave it to outside code to use it."
+
+	- What: What does this function do?
+	- How: How does that function do it?
+	- User cares about How not What.
+
+05:
+	- Initializer list gets called even before the constructor.
+	- Use initializer list as much as possible, if not, data members will be initialized twice.
+	  (once default destructor and other the one in the function needed).
+	- Only way to inialize a refrence data member or class that doesn't have a default constructor -> initializer list.
+	- You can delegate to other constructors in the initializer list and it will work,
+	  unlike delegating or calling other constructors in the constructor it self.**
+	- Get used to provide default constructor.
+	- When coding destructors don't forget to set main pointer to nullptr.
+	- Const makes it so you can't change the object or anything inside it (including functions that does the change).
+	- Refrence& makes it so you don't make a copy of the object (not sure 100%).
+	- Don't duplicate logic in a function and constructor, use delegation.
+	- *Content* of created pointers don't get deleted automatically even if they go out of scope.			 
+
+06:
+	- Shallow Copy Vs. Deep Copy
+	- Shallow Copy: Pointers gets assigned to pointers. obj a = obj b
+	- Deep Copy: Contetns of the pointers gets assigned to contents of the assigned object pointers.
+	- I don't understand the difference between & and * in function returns and when declaring variables. #06-13
+	  https://stackoverflow.com/questions/24380935/where-are-pointers-in-c-stored-on-the-stack-or-in-the-heap/24381070
+	- See problem #06-06. (about & const for varables and functions).
+
+07:
+	- void func() *const*
+	  Means we will not change member variables in a class.
+	  Create as much as possible of them.
+	- Const objects can't call non-const functions.
+	- Static: shared among all instances in its given context.
+	- Static functions can't access member variables.
+	- Static variables are initialized outside the class, 
+	  therefore they can be accessed even if they're private.
+	- Don't forget to define static variables after defining them.
+	- Singelton design pattern Problem #07-03
+	- See problem #07-04 Code review
+	- See problem #07-05 Blackbox testing
+	- See problem #07-07 Iterator design pattern => Notice the use of &, I would have used *
+	- See problem #07-08 Wrapper
+	- Conclusion: Not sure about & and *.
+
+08:
+	- Aggregation Vs Composition => Same as Partial Vs Total in Databases.
+	- Association => I think it means to have it as a parameter in one of the functions,
+	  as in that's the extent of it.
+
+	- The only thing that is stable in the market is changing, so:
+	1- write code that is as easily as possible if we want to implement some changes.
+	2- make sure the changes won't affect old users/customers and cause them to compilation erros.
+	3- if code changes, you might then be asking for variables that doesn't exist anymore,
+		instead, use functions to give you the needed informaiton.
+
+
+	"Software entities ... should be open for extension, but closed for modification."
+
+	"any abstraction that makes it harder to understand the code for current requirements is presumed guilty."
+
+	"Less is more" -> Less functions/data members in a class provides more contribution
+	to the code making it more readable and maintainable.
+
+	Most important diagrams:
+		- Class - Sequence - State - Activity
+
+09:
+	- (Just revision & Projects).
+
+10:
+	- Inheritance may create a hierarchy.
+	- OO has 2 reusability approaches: Inheritance and Composition.
+	- Only single reason to change class, if there exists a code =>
+	  Don't play with others code. Consider it closed. Reuse/Extend what is available. (huh?)
+	- "Large inheritance hierarchies in general, and deep ones in particular, 
+      are confusing to understand and therefore difficult to maintain. "
+	- "Inheritance is a design-time decision and trades off a lot of runtime flexibility."
+	- Prefer composition over inheritance most of the time,
+	  even if inheritance makes more sense unless it really should be an inheritance. Think twice.
+	- Whenever you have a parent class, make sure it is VALID for all possible future sub-classes, not only current ones.
+	  Your teammates will extend your work in the future!
+	- To solve some ambigiuty of c++ has keyword "virtual" => : virtual public class. #10-06
+	-  Avoiding multiple inheritance is highly recommended. Otherwise, strongly defend your choices,
+	   stick to tree structure.
+
+11:
+	- Call parent class constructor in child class constructor.
+	- By default class constructors are not inherited. #11-05
+	- Overloading => Same function but different parameters, (same class).
+	- Overriding  => Same function, Same parameters, different implementation (parent vs child class).
+	- Dealing with RTE problems using exceptions is discussed in this session.
+	- #11-16 Strongly "Prefer composition over inheritance" => Read the decorator pattern article. 
+	- Some classes are not designed for extension.
+	- To call functions of the parent class that are overridded -> (parent_class)::(function)
+	- To inherit constructors of base-class => "using base_class::base_class;
+	- You should be able to change the base-class implementation while still providing the same services to derived classes.
+	- in #11-03 Problem shows order of Constructor/Destructor.
+	- an object of a derived class can be treated as an object of its base class. #11_05 Problem
+
+	(Home wrok solution for this one is bad/wrong.)
+
+12A:
+	- Member functions call is based on pointer type, as seen in one of the homeworks in #11.
+	- When you use keyword `virtual` for functions in base-class it will instead call function of
+	  drived-class, aka it won't work as in the first point, it will see what is the pointer made of,
+	  and get that function related to it.
+	- Question is when trying to figure which function will get called, you will go to the *pointer type*
+	  virtual functions will call the drived-class function (See Slide #12-04).
+	- Polymorphism means = Have many forms.
+	- Polymorphism => Dynamic Binding => More generic code (Extensible - Flexible - Code reuse).
+
+12B:
+	- This one is kinda hard, see ImportantSlides.txt instead.
+	- If overriding method, use keyword `override`
+	- Virtual function ⇒ provide virtual destructor
+	- If a function is virtual from base class, always mark it as virtual in derived
+	- Never override with default parameters, even if used with virtual,
+	  default parameter of parent-class will be used.
+	- Don't override non-virtual functions, will screw-up Polymorphism.
+
+13A:
+	- Incomplete class is a class which has at least one pure virtual function,
+	  Incomplete classes cannot be instansiated.
+	- Abstract class == a class which is incomplete.
+	- an Interface is a class with all its functions being 'pure virtual'
+	- Inheriting from Interface == Interface implementation
+	- Prefer Interfaces to Abstract classes (?So you mean inheriting from interfaces only?)
+	- With Interfaces: you might think also in properties as parent class #13-07.
+
+13B:
+	- Downcasting => Going from Parent to Child, do your best to avoid it.
+	- Talks about APIs in this session, intermediary software "interface",
+	  between two applications so they can talk to each other.
+	- Frameworks typically have 'Inversion of Control'.
+	- If the data type affects behaviour (implementation) => Use virtual function,
+	  if not use Templates.
+	- Composition with interfaces is the way to go. (R.I.P. Inheritance.)
+	  ^ More on it when you practice, will need knowledge of design batters .-.
+	- #13-01P
+	- Revise factory design pattern #13-03P,
+	  class with static methods that return pointers to parent classes of their apropriate children (Polymorphism).
+	- Revise #13-05P
+	- Polymorphism needs more revision generally.
+
+14A:
+	- What's the difference between defining them inside and outside class? => More possibilities.
+	  if you define them inside class they will always be the first part (obj + 5), can't define inside class
+	  something like (5 + obj), in the first one you overload in the obj class, the second one you need to overload
+	  on the integer (other object) class.
+
+14B:
+	- lvalue => Pointes to address, rvalue => Pointes to nothing (e.g. temporary).
+	- same function but with 'const' is a different function, const objectss call const() and non-const...
+	- tie() compares each data item with the other, based on their order.
+	- If we need to sort based on different data members, we need functions based on what we need,
+	  then supply them in sort().
+	- operator() => Function call operator.
+	- Don't override && ||, #14-05P
+	- how to deal with overloading [][] => #14_08P
+
+15:
+	- ++x is more efficient than x++.
+	  In a million inetartion loop variable x will get copied 1 million times :O_O:
+
+	- single-argument constructors can be used as conversion constructors.
+	  This happens when you do 'obj = x;' #15_11
+	- Similarly, there's conversion operators, turning our class to some other data type
+	- Both of the conversions are problematic, use 'explicit' whenever you can!
+	- See different between copy & assign in #15-15.
+	- C++ philosophy is to give much power but with great power comes great responsibility
+	  Think twice in what you are operator overloading. Don’t shoot yourself in the foot.
+	- Remember, if you created pointers you need to make three things:
+		* Destructor
+		* Copy constructor
+		* operator=
+
+
+Notes:
+	= Generally I need more practice on Inheritance, Polymorphism, 
+	  and operator overloading, so read whenever.
+	= Lots of readings left :)
+
+	= What's remaining is:
+		- Do the final project.
+
+About Projects:
+	Mistakes & Tips can be found in notes.txt of each project.
+	
+  For Future OO Projects:
+	1- Layout all classes & functions in files or single file after designing the UML.
+	2- Every now and then compile the file, maybe every 5 minutes or after finishing each section.
+	3- I'd say code from top to bottom, but that's after 1.
+	4- When facing a bug, try to isolate it as much as possible.
+	
+    - Two major problems I have:
+      + Understanding requirements well.
+      + Making a good-ish starting design.
+
+    - Coupling & Cohesion => Arab tech meetup
+    - Remove Copy() & operator= at first.
+    - Remember destructor & Delete pointers.
+    - #01-05 => Programming Languages Table
+    - #02-02 => Pyramid of OO
+    - #06-07 => Temporary Objects & #06-06P
+    - #07-03 => const vs. pointers & #07-10P return const &
+    - #09-19 => Building OO Projects
+    - #09-21 => MVC
+    - #10-05P => Has-a (composition) isn't always the answer.
+    - #11-16 => Inheritance in practice.
+    - #13-28 => Composition over inheritance.
+    - #15-18 => Operator overloading summary
+
+	+ Do Blackbox testing.
+
+
+tl;dr of this course:
+	- Desinging is hard.
+
+	# Thanks to God, Done. #

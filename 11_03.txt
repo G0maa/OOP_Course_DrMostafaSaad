@@ -1,0 +1,12 @@
+(I am really bad at these questions.)
+
+Constructor Most
+Constructor B
+Constructor Ali
+Constructor C
+Destructor C
+Destructor Ali
+Destructor B
+Destructor Most
+
+Pointer doesn't have an object so no output.

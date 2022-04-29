@@ -1,0 +1,3 @@
+0	Customer1	1111	M	13
+1	Customer2	2222	F	28
+2	Customer3	3333	M	23
